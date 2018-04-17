@@ -19,9 +19,9 @@ import butterknife.ButterKnife;
 
 public class EmployeeDetailsActivity extends AppCompatActivity implements OnMapReadyCallback {
     @BindView(R.id.tvname)
-TextView tvname;
+    TextView tvname;
     @BindView(R.id.tvemail)
-TextView tvemail;
+    TextView tvemail;
     @BindView(R.id.tvcontact)
     TextView tvcontact;
     @BindView(R.id.tvaddress)
@@ -30,12 +30,13 @@ TextView tvemail;
     private GoogleMap mMap;
 
     Bundle b;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_details);
-ButterKnife.bind(this);
-        b=getIntent().getExtras();
+        ButterKnife.bind(this);
+        b = getIntent().getExtras();
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -51,9 +52,9 @@ ButterKnife.bind(this);
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        String location=b.getString("Location");
+        String location = b.getString("Location");
         List<String> latlong = Arrays.asList(location.split(","));
-        LatLng CurrentPoint = new LatLng(Double.parseDouble(latlong.get(0)),Double.parseDouble(latlong.get(1)));
+        LatLng CurrentPoint = new LatLng(Double.parseDouble(latlong.get(0)), Double.parseDouble(latlong.get(1)));
         mMap.addMarker(new
                 MarkerOptions().position(CurrentPoint).title("Current Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(CurrentPoint));

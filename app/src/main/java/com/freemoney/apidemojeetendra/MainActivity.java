@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements ListDataAdapter.D
             return true;
         }
     }
+
     public void checkgps() {
         final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements ListDataAdapter.D
         }
     }
 
-    private void buildAlertMessageNoGps(){
+    private void buildAlertMessageNoGps() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
                 .setCancelable(false)
@@ -164,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements ListDataAdapter.D
                 final EditText txtaddress = (EditText) dialog.findViewById(R.id.etaddress);
                 final EditText txtage = (EditText) dialog.findViewById(R.id.etage);
                 Button Add = (Button) dialog.findViewById(R.id.save);
-gender="Male";
+                gender = "Male";
                 RadioGroup radioGroup = (RadioGroup) dialog.findViewById(R.id.rg);
 
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
